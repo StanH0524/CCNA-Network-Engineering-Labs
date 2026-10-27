@@ -1,4 +1,4 @@
-# CCNA-Network-Engineering-Labs
+
 # CCNA Network Engineering Labs
 
 Welcome to my hands-on networking portfolio!
