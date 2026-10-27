@@ -10,12 +10,11 @@ Each department has its own VLAN and subnet, and the multilayer switch allows bo
 
 ## Network Topology
 
-![Network Topology](01-topology.png)
+The network uses a simple two-tier design:
 
-### Devices Used
-- 1 Cisco 3560 multilayer switch
-- 2 Cisco 2960 access switches
-- 2 PCs
+- **Distribution Layer:** Cisco 3560 multilayer switch
+- **Access Layer:** Two Cisco 2960 switches
+- **End Devices:** Two PCs representing Accounting and IT
 
 ## VLAN & IP Addressing
 
@@ -41,8 +40,6 @@ interface fa0/1
  switchport access vlan 10
 ```
 
-![Accounting VLAN](02-vlan-accounting.png)
-
 **IT Switch**
 
 ```cisco
@@ -53,8 +50,6 @@ interface fa0/1
  switchport mode access
  switchport access vlan 20
 ```
-
-![IT VLAN](03-vlan-it.png)
 
 ### 2. Trunking
 
@@ -71,8 +66,6 @@ interface fa0/2
 ```
 
 Both ends of each switch-to-switch connection were configured as trunks.
-
-![Trunk Verification](04-trunk-distribution.png)
 
 ### 3. Inter-VLAN Routing
 
@@ -103,8 +96,6 @@ After configuring the network, I used Cisco IOS commands to verify that everythi
 - `ping` — Tested connectivity between VLANs.
 
 I successfully pinged the IT PC (`192.168.20.2`) from the Accounting PC (`192.168.10.10`).
-
-![Successful Inter-VLAN Ping](05-successful-ping.png)
 
 ## Troubleshooting
 
